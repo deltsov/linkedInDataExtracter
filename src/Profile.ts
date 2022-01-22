@@ -4,5 +4,5 @@ export interface LinkedInProfile {
     link: string | null
     title: string | null
     company?: string | null
-    //email: any
+    email: any
 }
