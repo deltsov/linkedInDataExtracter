@@ -1,9 +1,8 @@
 import { browser } from "webextension-polyfill-ts";
 
-import AirtableBridge from '@src/services/airtableBridge'
 import GoogleSheetBridge from '@src/services/googleSheetBridge'
 
-import { BRIDGE_CHOICE_STORAGE, SHEET, DATABLIST } from '@src/options'
+import { BRIDGE_CHOICE_STORAGE, SHEET } from '@src/options'
 
 export async function isBridgeConfigured() {return true}
 // export async function isBridgeConfigured() {

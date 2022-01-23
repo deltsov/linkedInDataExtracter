@@ -3,11 +3,9 @@ import { browser } from "webextension-polyfill-ts";
 
 import { Title } from '@src/components/title'
 import { BridgeSelect } from '@src/components/bridgeSelect'
-import { AirtableConf } from '@src/components/airtable_options'
 import { GoogleSheetConf } from '@src/components/sheet_options'
-import { DatablistConf } from '@src/components/datablist_options'
 
-import { AIRTABLE, SHEET, DATABLIST, BRIDGE_CHOICE_STORAGE } from '@src/options'
+import { SHEET, BRIDGE_CHOICE_STORAGE } from '@src/options'
 
 import "./styles.scss";
 
@@ -21,7 +19,7 @@ export const Popup: FunctionComponent = () => {
             if(result[BRIDGE_CHOICE_STORAGE]){
                 setBridge(result[BRIDGE_CHOICE_STORAGE])
             } else {
-                setBridge(AIRTABLE)
+                setBridge(SHEET)
             }
         });
 
@@ -35,12 +33,8 @@ export const Popup: FunctionComponent = () => {
     }
 
     let optionsComponent: React.ReactNode;
-    if (bridge === AIRTABLE){
-        optionsComponent = <AirtableConf />
-    } else if (bridge === SHEET){
+    if (bridge === SHEET){
         optionsComponent = <GoogleSheetConf />
-    } else if (bridge === DATABLIST){
-        optionsComponent = <DatablistConf />
     } else {
         optionsComponent = (
             <div>.</div>

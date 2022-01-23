@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { browser } from "webextension-polyfill-ts";
 
-import { AIRTABLE, SHEET, DATABLIST } from '@src/options'
+import {SHEET} from '@src/options'
 
 interface IBridgeChoiceProps {
     onSelect: Function

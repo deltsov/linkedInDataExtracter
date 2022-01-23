@@ -57,7 +57,6 @@ function findProfileTitle(node: Element): string | null {
 }
 function findProfileEmail(node: Element): string | null {
     const titleNode = document.querySelector("div > section.pv-contact-info__contact-type.ci-email > div > a");
-    
     if (!titleNode || !titleNode.textContent) return null;
 
     return titleNode.textContent.trim();
@@ -108,27 +107,44 @@ function onClick(e: MouseEvent) {
     };
     console.log(profile);
 
-    /*function postData{
-        fetch('google.com',{
-            "body": ,
-            "method": "GET",
-            "mode": "cors",
-            "credentials": "include"
-            })
-    }*/
+    
+    // const corezoidUrl = 'https://www.corezoid.com/api/1/json/public/1027134/c0f8ef22981e0f249ac263641d47ef5b51ca409d'
+    // let xhr = new XMLHttpRequest();
+    // xhr.open("POST", corezoidUrl);
+    // // xhr.setRequestHeader("Accept", "application/json");
+    // xhr.setRequestHeader("Content-Type", "application/json");
+    // let data = profile.name;
+    // xhr.send();
+    // xhr.onreadystatechange=(e)=>{
+    //     console.log(xhr.responseText)
+    // }
+    
+
+    (async () => {
+        const rawResponse = await fetch('https://cors.eu.org/https://www.corezoid.com/api/1/json/public/1027134/c0f8ef22981e0f249ac263641d47ef5b51ca409d', {
+          method: 'POST',
+          headers: {
+          },
+          body: JSON.stringify(profile)
+        });
+        const content = await rawResponse.json();
+      
+        console.log(content);
+      })();
+
 
     var btnNode: HTMLButtonElement | null = null;
 
     browser.runtime
         .sendMessage({
             action: "saveProfiles",
-            payload: [profile],
+            payload: [profile]
         })
-        .catch((err) => {
-            console.log(err);
-            const errorText = "Error while importing!";
-            if (btnNode) disableButton(btnNode, errorText);
-        });
+        // .catch((err) => {
+        //     console.log(err);
+        //     const errorText = "Error while importing!";
+        //     if (btnNode) disableButton(btnNode, errorText);
+        // });
 
     // Replace btn text
     const successText = "Imported!";
@@ -184,15 +200,7 @@ export const renderAddProfileBtn = async (rootNode: HTMLDivElement | null) => {
             flexElem.appendChild(btn);
             listActionNode.appendChild(flexElem);
         }
-    } /*function postData{
-        fetch('google.com',{
-            "body": ,
-            "method": "GET",
-            "mode": "cors",
-            "credentials": "include"
-        })
-
-    */
+    } 
 };
 
 // Рисование кнопки сохранения на странице
