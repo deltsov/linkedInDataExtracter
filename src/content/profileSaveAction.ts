@@ -62,6 +62,11 @@ function findProfileEmail(node: Element): string | null {
     return titleNode.textContent.trim();
 }
 
+//document.querySelector(" div.ph5.pb5 > div.mt2.relative > div.pb2.pv-text-details__left-panel > span.text-body-small.inline.t-black--light.break-words")
+//Получение города и страны
+
+
+
 
 /*function findProfileImage(node: Element): string | null {
     const imageNode = node.querySelector('.pv-top-card--photo img,.pv-top-card__photo-wrapper img') as HTMLImageElement;
@@ -119,7 +124,7 @@ function onClick(e: MouseEvent) {
     //     console.log(xhr.responseText)
     // }
     
-
+//https://cors.eu.org/ is proxy
     (async () => {
         const rawResponse = await fetch('https://cors.eu.org/https://www.corezoid.com/api/1/json/public/1027134/c0f8ef22981e0f249ac263641d47ef5b51ca409d', {
           method: 'POST',
