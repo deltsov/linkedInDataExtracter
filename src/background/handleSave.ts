@@ -52,12 +52,8 @@ export async function saveProfiles(
 //         throw new Error("No bridge configured");
 //     };
 
-//     if(bridge === AIRTABLE) {
-//         return await AirtableBridge.createProfiles(profiles)
-//     }else if(bridge === SHEET) {
+//      if(bridge === SHEET) {
 //         return await GoogleSheetBridge.createProfiles(profiles)
-//     }else if(bridge === DATABLIST){
-//         throw new Error("Datablist is not yet available");
 //     }
 
 

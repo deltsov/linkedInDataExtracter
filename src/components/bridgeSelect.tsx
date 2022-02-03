@@ -49,22 +49,22 @@ interface IBridgeSelectProps {
     onSelect: Function
 }
 
-export const BridgeSelect:FunctionComponent<IBridgeSelectProps> = ({
-    value,
-    onSelect
-}) => {
+// export const BridgeSelect:FunctionComponent<IBridgeSelectProps> = ({
+//     value,
+//     onSelect
+// }) => {
 
-    return (
-        <div className="d-flex align-items-center">
+//     return (
+//         <div className="d-flex align-items-center">
             
-            <BridgeChoice
-                iconSrc={browser.runtime.getURL("images/google-sheets-icon.svg")}
-                name="G. Sheet"
-                onSelect={onSelect}
-                identifier={SHEET}
-                active={value == SHEET}
-            />
+//             <BridgeChoice
+//                 iconSrc={browser.runtime.getURL("images/google-sheets-icon.svg")}
+//                 name="G. Sheet"
+//                 onSelect={onSelect}
+//                 identifier={SHEET}
+//                 active={value == SHEET}
+//             />
             
-        </div>
-    )
-}
+//         </div>
+//     )
+// }

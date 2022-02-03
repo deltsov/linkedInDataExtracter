@@ -12,7 +12,7 @@ export const Title:FunctionComponent = () => {
                 />
             </div>
             <div className="ps-3">
-                <h3 className="m-0 p-0">LinkedIn Contact Importer</h3>
+                <h3 className="m-0 p-0">Rocket Contact Extracter</h3>
             </div>
         </div>
     )

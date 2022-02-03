@@ -5,4 +5,5 @@ export interface LinkedInProfile {
     title: string | null
     company?: string | null
     email: any
+    city: any
 }

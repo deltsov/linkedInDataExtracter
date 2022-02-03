@@ -32,38 +32,7 @@ export const Mapping: FunctionComponent<IMappingProps> = ({
             <div className="mb-3">
                 <strong>Mapping Google Sheet Fields</strong>
 
-                <div className="mt-3">
-                {errorMessage ? (
-                    <div className="alert alert-warning">
-                        {errorMessage}
-                        <p>
-                            <a
-                                target="_blank"
-                                href="https://datablist.github.io/linkedin-contact-importer-airtable-google-sheet-datablist/#google_sheet_conf">
-                                Please visit documentation to learn more
-                            </a>.
-                        </p>
-                    </div>
-                ) : (
-                    <div>
-                    {fields.length>0 ? (
-                        <div>
-                            <FieldsMapping
-                                fields={fields}
-                                mappings={PROFILE_FIELDS}
-                            />
-                            <p className="mt-3">
-                                <strong>
-                                    Notes: The columns are fetched from the first row.
-                                </strong>
-                            </p>
-                        </div>
-                    ) : (
-                        <div>Loading fields</div>
-                    )}
-                    </div>
-                )}
-                </div>
+                {}
 
             </div>
 

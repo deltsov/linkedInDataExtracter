@@ -146,13 +146,14 @@ class GoogleSheetBridge {
     }
 
     async isLoggedIn(): Promise<boolean> {
-        try {
-            await this.getAccessToken(false);
-            return true;
-        } catch(err) {
-            console.log(err);
-            return false;
-        }
+        return true;
+        // try {
+        //     await this.getAccessToken(false);
+        //     return true;
+        // } catch(err) {
+        //     console.log(err);
+        //     return false;
+        // }
     }
 
     async isConfigured(): Promise<boolean> {

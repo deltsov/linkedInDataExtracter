@@ -13,22 +13,22 @@ const isOnProfilePage = () => window.location.pathname.includes('detail/contact-
 const profileCardSelector = '.pv-top-card.artdeco-card';
 
 /*
-    Results Listing
-*/
-const isOnSearchPage = () => window.location.pathname.includes('/search/results/');
-const resultItemsSelector = '.search-results__list li.search-result,.reusable-search__result-container';
-const resultItemsActionsSelector = '.search-result__actions,.entity-result__actions';
-const resultsAllSelector = '.artdeco-pagination';
+//     Results Listing
+// */
+// const isOnSearchPage = () => window.location.pathname.includes('/search/results/');
+// const resultItemsSelector = '.search-results__list li.search-result,.reusable-search__result-container';
+// const resultItemsActionsSelector = '.search-result__actions,.entity-result__actions';
+// const resultsAllSelector = '.artdeco-pagination';
 
 
-/*
-    Sales Navigator
-*/
-const isSalesNavigatorPage = () => window.location.pathname.includes('/sales/');
-// We need a DOM element with an id attribute
-const salesItemsSelector = '.search-results__result-list .search-results__result-container > .ember-view';
-const salesItemsActionsSelector = '.result-lockup__common-actions';
-const salesAllSelector = '.search-results__pagination';
+// /*
+//     Sales Navigator
+// */
+// const isSalesNavigatorPage = () => window.location.pathname.includes('/sales/');
+// // We need a DOM element with an id attribute
+// const salesItemsSelector = '.search-results__result-list .search-results__result-container > .ember-view';
+// const salesItemsActionsSelector = '.result-lockup__common-actions';
+// const salesAllSelector = '.search-results__pagination';
 
 
 const analysePage = async () => {
