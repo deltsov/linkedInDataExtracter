@@ -8,6 +8,7 @@ import { ConnectionStatus }  from '@src/components/connectionStatus'
 
 import { Mapping } from './mapping'
 
+
 export const GoogleSheetConf: FunctionComponent = () => {
     const [spreadsheetId, setSpreadsheetId] = useState('');
     const [connectionStatus, setConnectionStatus] = useState('pending');

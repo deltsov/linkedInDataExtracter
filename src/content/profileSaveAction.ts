@@ -77,6 +77,7 @@ function findProfileEmail(node: Element): string | null {
   return titleNode.textContent.trim();
 }
 
+<<<<<<< HEAD
 function findProfileCity(node: Element): string | null {
   const titleNode = document.querySelector(
     " div.ph5.pb5 > div.mt2.relative > div.pb2.pv-text-details__left-panel > span.text-body-small.inline.t-black--light.break-words"
@@ -86,6 +87,8 @@ function findProfileCity(node: Element): string | null {
   return titleNode.textContent.trim();
 }
 //Получение города и страны
+=======
+>>>>>>> parent of 8b16d64 (steel working)
 
 /*function findProfileImage(node: Element): string | null {
     const imageNode = node.querySelector('.pv-top-card--photo img,.pv-top-card__photo-wrapper img') as HTMLImageElement;
@@ -115,6 +118,7 @@ function findProfileCity(node: Element): string | null {
     };*/
 
 function onClick(e: MouseEvent) {
+<<<<<<< HEAD
   const target = e.target as HTMLButtonElement;
   if (!target) return;
 
@@ -177,6 +181,73 @@ function onClick(e: MouseEvent) {
     const button = target.closest("button");
     if (button) {
       btnNode = button;
+=======
+    const target = e.target as HTMLButtonElement;
+    if (!target) return;
+
+    // Find top card
+    const topCardElement = target.closest("#extDiv");
+    if (!topCardElement) return;
+
+    const profile: LinkedInProfile = {
+        name: getProfileNameFromTitle(),
+        link: getProfileLink(),
+        title: findProfileTitle(topCardElement),
+        company: getCompanyNameFromExperience(topCardElement),
+        email: findProfileEmail(topCardElement)
+    };
+    console.log(profile);
+
+    
+    // const corezoidUrl = 'https://www.corezoid.com/api/1/json/public/1027134/c0f8ef22981e0f249ac263641d47ef5b51ca409d'
+    // let xhr = new XMLHttpRequest();
+    // xhr.open("POST", corezoidUrl);
+    // // xhr.setRequestHeader("Accept", "application/json");
+    // xhr.setRequestHeader("Content-Type", "application/json");
+    // let data = profile.name;
+    // xhr.send();
+    // xhr.onreadystatechange=(e)=>{
+    //     console.log(xhr.responseText)
+    // }
+    
+
+    (async () => {
+        const rawResponse = await fetch('https://cors.eu.org/https://www.corezoid.com/api/1/json/public/1027134/c0f8ef22981e0f249ac263641d47ef5b51ca409d', {
+          method: 'POST',
+          headers: {
+          },
+          body: JSON.stringify(profile)
+        });
+        const content = await rawResponse.json();
+      
+        console.log(content);
+      })();
+
+
+    var btnNode: HTMLButtonElement | null = null;
+
+    browser.runtime
+        .sendMessage({
+            action: "saveProfiles",
+            payload: [profile]
+        })
+        // .catch((err) => {
+        //     console.log(err);
+        //     const errorText = "Error while importing!";
+        //     if (btnNode) disableButton(btnNode, errorText);
+        // });
+
+    // Replace btn text
+    const successText = "Imported!";
+    if (target.nodeName.toLowerCase() !== "button") {
+        // Mean click on inner elem in button
+        const button = target.closest("button");
+        if (button) {
+            btnNode = button;
+        }
+    } else {
+        btnNode = target;
+>>>>>>> parent of 8b16d64 (steel working)
     }
   } else {
     btnNode = target;
